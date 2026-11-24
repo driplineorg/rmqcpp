@@ -20,10 +20,14 @@ if(rmqcpp_ENABLE_TESTING)
     enable_testing()
 endif()
 
+option(rmqcpp_BUILD_EXAMPLES "Build the example executables" ON)
+
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 add_subdirectory(src)
-add_subdirectory(examples)
+if(rmqcpp_BUILD_EXAMPLES)
+    add_subdirectory(examples)
+endif()
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     add_compile_options(-Wall -Wextra -Wpedantic)
