@@ -3,6 +3,9 @@ project(rmq LANGUAGES C CXX)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
+# Provides the default for CMAKE_INSTALL_LIBDIR, which is used when installing the rmq library
+include(GNUInstallDirs)
+
 option(ENABLE_COMPRESSION "Enable zstd compression support" ON)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
